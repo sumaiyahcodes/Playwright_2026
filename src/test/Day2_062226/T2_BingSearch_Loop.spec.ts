@@ -20,12 +20,13 @@ test('Bing Searches with multiple keywords', async ({ page }) => {
     await page.keyboard.press('Enter')
 
     //wait few seconds
-    await page.waitForTimeout(3000)
+    await page.waitForSelector("//*[@class='sb_count']", { timeout: 15000 })
 
     //capture the search result text
     let results = await page.locator("//*[@class='sb_count']").textContent()
     console.log(results)
     let arrayReslts = results?.split(' ')
     console.log("Search number for " + sports[i]! + " is : " + arrayReslts?.[1])
+    //testing new commit
   }
 });
