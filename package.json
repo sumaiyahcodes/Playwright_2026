@@ -8,7 +8,7 @@
     "assignment1": "npx playwright test src/test/Day1_Action_Item_1/Assignment_1.spec.ts --headed --workers=1 --project=chromium --reporter=html",
     "uspsMouseHover": "npx playwright test src/test/Day2_062226/T1_USPS_MouseHover.spec.ts --headed --workers=1 --project=chromium --reporter=html",
     "bingSearchLoop": "npx playwright test src/test/Day2_062226/T2_BingSearch_Loop.spec.ts --headed --workers=1 --project=chromium --reporter=html",
-    "parallelTest": "npx playwright test src/test/Day2_062226/.* --workers=2 --project=chrome --headed --reporter=html"
+    "parallelTest": "npx playwright test src/test/Day2_062226/.* --workers=2 --project=chromium --headed --reporter=html"
   },
 
   "keywords": [],
