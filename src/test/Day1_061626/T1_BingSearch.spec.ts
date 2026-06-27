@@ -13,7 +13,6 @@ test('Bing search test', async ({ page }) => {
   // submit with keyboard enter
   await page.keyboard.press('Enter')
 
-
   //wait few seconds
   await page.waitForTimeout(3000)
 
@@ -22,5 +21,5 @@ test('Bing search test', async ({ page }) => {
   console.log(results)
   let arrayReslts = results?.split(' ')
   console.log("Search number is : " + arrayReslts?.[0])
-  
+
   });
