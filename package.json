@@ -11,6 +11,10 @@
     "parallelTest": "npx playwright test src/test/Day2_062226 --workers=2 --project=chromium --reporter=html"
   },
 
+  "scripts": {
+    "uspsMouseHoverTestHeadless": "npx playwright test src/test/Day2_062226/T1_USPS_MouseHover.spec.ts --workers=1 --project=chromium --reporter=html --retries=2"
+  },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
