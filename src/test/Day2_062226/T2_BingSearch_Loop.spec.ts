@@ -19,17 +19,16 @@ test('Bing Searches with multiple keywords', async ({ page }) => {
     // submit with keyboard enter
     await page.keyboard.press('Enter')
 
-    //wait for the results page to finish loading
-    await page.waitForLoadState('domcontentloaded', { timeout: 15000 }).catch(() => {})
+    // wait for the results page to finish loading and ensure results count is visible
+    await page.waitForLoadState('networkidle')
+    const resultsLocator = page.locator("//*[contains(@class,'sb_count')]")
+    await resultsLocator.waitFor({ state: 'visible', timeout: 10000 })
 
-    //capture the search result text from the visible page text
-    const bodyText = await page.locator('body').textContent() ?? '';
-    const match = bodyText.match(/about\s+([0-9,]+)\s+results/i);
+    const resultsText = (await resultsLocator.textContent())?.trim() ?? ''
+    console.log(`raw results for ${sports[i]!}:`, resultsText)
 
-    if (!match?.[1]) {
-      throw new Error(`Could not find result count for ${sports[i]!}`);
-    }
-
-    console.log(`Search number for ${sports[i]!} is : ${match[1]}`);
+    const numberStr = resultsText.match(/[\d,]+/)?.[0] ?? '0'
+    const resultsNumber = parseInt(numberStr.replace(/,/g, ''), 10)
+    console.log(`Search number for ${sports[i]!} is : ${resultsNumber}`)
   }
 });
