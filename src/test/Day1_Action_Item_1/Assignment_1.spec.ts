@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
 
-test('Assignment 2', async ({ page }) => {
+test('Assignment 1', async ({ page }) => {
 
     //visit brave search home page
     await page.goto('https://search.brave.com/');

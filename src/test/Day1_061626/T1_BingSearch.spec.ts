@@ -6,7 +6,7 @@ test('Bing search test', async ({ page }) => {
   await page.goto('https://www.bing.com/')
 
   //enter a keyword on the search field. .fill is same as sendkeys in selenium
-  await page.locator("//*[@name='q']").fill('Playwright')
+  await page.locator("//*[@name='q']").fill('Samsung Fridge')
 
   await page.waitForTimeout(2000)
 

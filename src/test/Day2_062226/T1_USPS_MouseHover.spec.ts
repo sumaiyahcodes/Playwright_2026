@@ -9,6 +9,6 @@ test('USPS Mouse Hover Test', async ({ page }) => {
     await page.locator("//*[text()='Quick Tools']").hover();
 
     //click on track a package link
-    await page.locator("//*[@alt='Tracking Icon']").click();
+    await page.locator('text=Track a Package').click();
 
 });
