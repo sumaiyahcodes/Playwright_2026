@@ -23,6 +23,8 @@ jobs:
       run: npm run parallelTest
     - name: Run USPS Test
       run: npm run uspsMouseHoverTestHeadless
+    - name: Run Assignment 2 Tests
+      run: npm run assignment2
       
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
