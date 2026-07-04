@@ -9,7 +9,11 @@
     "bingSearchLoop": "npx playwright test src/test/Day2_062226/T2_BingSearch_Loop.spec.ts --workers=1 --project=chromium --reporter=html",
     "parallelTest": "npx playwright test src/test/Day2_062226 --workers=2 --project=chromium --reporter=html",
     "uspsMouseHoverTestHeadless": "npx playwright test src/test/Day2_062226/T1_USPS_MouseHover.spec.ts --workers=1 --project=chromium --reporter=html --retries=2",
-    "assignment2": "npx playwright test src/test/Day2_Action_Item_6/Assignment_2.spec.ts --workers=1 --project=chromium --reporter=html"
+    "assignment2": "npx playwright test src/test/Day2_Action_Item_6/Assignment_2.spec.ts --workers=1 --project=chromium --reporter=html",
+    "classpractice": "npx playwright test src/test/Day3_062326/In_Class_Action_Item_1.spec.ts --workers=1 --project=chromium --reporter=html",
+    "pw": "npx -y node@22 ./node_modules/@playwright/test/cli.js",
+    "bingReusableTest": "npm run pw -- test src/test/Day4_063026/BingSearch_ReusableConcept.spec.ts --workers=1 --project=chromium --reporter=html",
+    "disneyAssignment": "npm run pw -- test src/test/Day4_Action_Item_7/Assignment_3.spec.ts --workers=1 --headed --project=chromium --reporter=html"
   },
 
   "keywords": [],

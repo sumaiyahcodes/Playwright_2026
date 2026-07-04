@@ -20,14 +20,23 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
-    # - name: Run Default Parallel Tests
-    #   run: npm run parallelTest
+    - name: Run Default Parallel Tests
+      run: npm run parallelTest
 
-    # - name: Run USPS Test
-    #   run: npm run uspsMouseHoverTestHeadless
+    - name: Run USPS Test
+      run: npm run uspsMouseHoverTestHeadless
 
     - name: Run Assignment 2 Tests
       run: npx playwright test src/test/Day2_Action_Item_6/Assignment_2.spec.ts --workers=1 --project=chromium --reporter=html
+
+    - name: Run Wikipedia Search Test
+      run: npx playwright test src/test/Day1_061626/T1_BingSearch.spec.ts --workers=1 --project=chromium --reporter=html
+
+    - name: Run Bing Reusable Test
+      run: npm run bingReusableTest
+
+    - name: Run Disney Assignment 3 Tests
+      run: npm run disneyAssignment
       
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
