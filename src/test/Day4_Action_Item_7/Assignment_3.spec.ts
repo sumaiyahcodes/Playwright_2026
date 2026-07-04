@@ -16,8 +16,8 @@ test('Disney Search Test', async ({ page }) => {
    await page.locator('//*[@id="Movies-dropdown"]').hover();
    await page.waitForTimeout(2000);
 
-   //click on the movie link using a forced action if the layout is trying to hide it in headless
-   await page.locator("//*[@id='Movies-region-desktop']//a[@href='https://movies.disney.com/all-movies']").click({ force: true });
+   //click on the movie link
+   await page.locator("//*[@id='Movies-region-desktop']//a[@href='https://movies.disney.com/all-movies']").click();
 
    //wait for the movies listing page to load completely
    await page.waitForLoadState('networkidle');
