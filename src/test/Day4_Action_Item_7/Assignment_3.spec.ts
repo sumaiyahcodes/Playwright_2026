@@ -23,14 +23,14 @@ test('Disney Search Test', async ({ page }) => {
    await page.waitForLoadState('networkidle');
    await page.waitForTimeout(4000);
 
-   //click directly on the image element of the poster using your image snippet details
+   //click directly on the image element of the poster
    await page.locator("//img[@alt='Gatto']").first().click();
 
    //wait for the movie details page to load
    await page.waitForLoadState('networkidle');
    await page.waitForTimeout(3000);
 
-   //click on watch teaser using the exact data-title attribute from your snippet
+   //click on watch teaser
    await page.locator("//a[@data-title='WATCH TEASER']").click();
 
    //wait for teaser section to open
