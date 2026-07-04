@@ -36,7 +36,7 @@ test('Disney Search Test', async ({ page }) => {
    //wait for teaser section to open
    await page.waitForTimeout(4000);
 
-   //capture the raw text string from the paragraph element
+   //capture the text string
    let rawResults = await page.locator("//div[contains(@class, 'video-info')]//p[@class='title']").textContent();
    
    //clean it up: split at the pipe character "|" and extract only the first item, then trim spaces
