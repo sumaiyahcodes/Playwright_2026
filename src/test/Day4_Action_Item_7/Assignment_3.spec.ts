@@ -6,7 +6,15 @@ test('Disney Search Test', async ({ page }) => {
    await page.setViewportSize({ width: 1280, height: 800 });
 
    //navigate to home page
-   await page.goto('https://www.disney.com/');
+   await page.goto('https://www.disney.com/', {
+      waitUntil: 'domcontentloaded',
+      referer: 'https://www.google.com/'
+   });
+   await page.addInitScript(() => {
+      Object.defineProperty(navigator, 'webdriver', {
+         get: () => undefined,
+      });
+   });
 
    //wait for the homepage to settle completely
    await page.waitForLoadState('networkidle');

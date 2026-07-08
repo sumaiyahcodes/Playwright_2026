@@ -15,7 +15,7 @@ test('Assignment 2', async ({ page }) => {
     await page.locator("//*[@id='submit-llm-button']").click();
 
     // wait 2-3 seconds
-    await page.waitForTimeout(3000);
+    await page.waitForTimeout(10000);
 
     // capture full text and store it in a string variable
     const result = await page.locator("//*[@class='message assistant llm-output svelte-t22puq first']").textContent();
